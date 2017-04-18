@@ -1,0 +1,23 @@
+npm init //to install the node server
+
+--save = -S 
+//--save will write this dependency to package.json
+
+install = i
+
+//Project dependencies
+    express.js - use to create a node web server
+    npm install --save express
+    npm i -s express
+
+    //MongoDB installed for DB
+    npm i -S mongodb
+
+    //React and React-DOM
+    npm i -S react react-dom
+
+
+//DEV Dependencies
+--save-dev = saves the piece for developement
+
+//Webpack - used to translate modular code 
