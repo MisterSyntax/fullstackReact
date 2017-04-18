@@ -1,0 +1,30 @@
+{
+  "name": "learn-fullstack-javascript",
+  "version": "1.0.0",
+  "description": "Learning Fullstack JavaScript Development: MongoDB, Node.js, React.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MisterSyntax/fullstackReact.git"
+  },
+  "keywords": [
+    "fullstack",
+    "react",
+    "mongodb"
+  ],
+  "author": "Andrew Syriala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MisterSyntax/fullstackReact/issues"
+  },
+  "homepage": "https://github.com/MisterSyntax/fullstackReact#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongodb": "^2.2.26",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
