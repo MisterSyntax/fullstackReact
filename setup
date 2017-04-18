@@ -21,3 +21,15 @@ install = i
 --save-dev = saves the piece for developement
 
 //Webpack - used to translate modular code 
+npm install --save-dev webpack
+
+//babel to translate JSX
+npm i -D babel-cli babel-loader babel-preset-es2015 babel-preset-stage-2 babel-preset-react
+//might consider using
+npm i -D babel-cli babel-loader babel-preset-env babel-preset-stage-2 babel-preset-react
+
+//use nodemon to monitor for changes to node setup and restart automagically
+npm i -D nodemon
+
+//eslint to monitor js qual
+npm i -D eslint eslint-plugin-react babel-eslint
