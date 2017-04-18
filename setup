@@ -18,18 +18,49 @@ install = i
 
 
 //DEV Dependencies
---save-dev = saves the piece for developement
+    --save-dev = saves the piece for developement
 
-//Webpack - used to translate modular code 
-npm install --save-dev webpack
+    //Webpack - used to translate modular code 
+    npm install --save-dev webpack
 
-//babel to translate JSX
-npm i -D babel-cli babel-loader babel-preset-es2015 babel-preset-stage-2 babel-preset-react
-//might consider using
-npm i -D babel-cli babel-loader babel-preset-env babel-preset-stage-2 babel-preset-react
+    //babel to translate JSX
+    npm i -D babel-cli babel-loader babel-preset-es2015 babel-preset-stage-2 babel-preset-react
+    //might consider using
+    npm i -D babel-cli babel-loader babel-preset-env babel-preset-stage-2 babel-preset-react
 
-//use nodemon to monitor for changes to node setup and restart automagically
-npm i -D nodemon
+    //use nodemon to monitor for changes to node setup and restart automagically
+    npm i -D nodemon
 
-//eslint to monitor js qual
-npm i -D eslint eslint-plugin-react babel-eslint
+    //eslint to monitor js qual
+    npm i -D eslint eslint-plugin-react babel-eslint
+
+
+//Project Structure
+    //src folder - holds all of our frontend js modular code
+        mkdir src
+        touch src/index.js
+
+    //public - holds static assets like html, js, and css files
+        mkdir public
+        touch public/index.html
+
+    //api - a dir for our backend api server
+        mkdir api
+        touch api/index.js
+
+    //webpack.config.js -tells webpack how to run
+        -entry, tells it where to start looking
+        -output - tells it where to output the fle and its name
+        -module - the files to run this on and what to run on them
+
+    //.babelrc - tells babel what presets to use
+
+    //.eslintrc.js - tells what eslint rules to follow
+
+//Node.js scripts in package.json
+    "start": "nodemon --exec babel-node server.js --ignore public/"
+    //uses nodemon execution wrapper and use babel-node to support babel, and we ignore the public directory in nodemon, as changes there are driven by source directory
+
+    "dev": "webpack -wd" 
+    //transformns src files into bundled file for the browser
+    //-wd - watch and developement mode
