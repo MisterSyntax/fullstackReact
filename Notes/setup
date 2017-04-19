@@ -64,3 +64,11 @@ install = i
     "dev": "webpack -wd" 
     //transformns src files into bundled file for the browser
     //-wd - watch and developement mode
+
+//json-loader
+npm i -S json-loader
+//add this to loaders in webpack.config
+    {
+        test: /\.json$/,
+        loader: "json-loader"
+    }

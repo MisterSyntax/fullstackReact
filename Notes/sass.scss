@@ -1,0 +1,24 @@
+//Sass allows for nested css calls
+//sass files are .scss
+.ContestPreview{
+    border: 1px solid;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto 20px;
+    .category-name{
+        background-color: aquamarine;
+    }
+}
+
+//to use it in your project do 
+npm i -S node-sass-middleware
+
+//create a sass folder with your sass files in it
+
+//add it to server.js and use it to translate it from the sass folder to the public folder
+import sassMiddleWare from "node-sass-middleware";
+
+server.use(sassMiddleWare({
+    src: path.join(__dirname, "sass"),
+    dest: path.join(__dirname, "public")
+}));

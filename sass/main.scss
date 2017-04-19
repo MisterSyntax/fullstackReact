@@ -1,0 +1,13 @@
+.ContestPreview{
+    border: 2px solid limegreen;
+    width: 300px;
+    margin: 0 auto 20px;
+    .category-name{
+        background-color: aquamarine;
+        padding: 5px;
+        border-bottom: 0px solid salmon;
+    }
+    .contest-name{
+        padding: 5px;
+    }
+}
