@@ -129,3 +129,7 @@ componentWillUnmount()//called right before component is unmounted
             </div>
         );
     }
+
+/**
+ * @description: ReactDOMServer - used to render React components on the server
+ */

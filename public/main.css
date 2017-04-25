@@ -8,3 +8,6 @@
     border-bottom: 0px solid salmon; }
   .ContestPreview .contest-name {
     padding: 5px; }
+
+.link {
+  cursor: pointer; }
