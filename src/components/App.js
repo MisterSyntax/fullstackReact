@@ -15,7 +15,7 @@ const onPopState = handler => {
 class App extends React.Component {
     state = {
         "contests": this.props.initialData.contests,
-        "currentContestId": this.props.initialData.currentContestId 
+        "currentContestId": this.props.initialData.currentContestId
     }
     
     
@@ -31,6 +31,7 @@ class App extends React.Component {
     componentWillUnmount(){
         onPopState(null);
     }
+
     fetchContest = (contestId) => {
         pushState(
             {currentContestId: contestId},
@@ -40,18 +41,15 @@ class App extends React.Component {
         //this.state.contests[contestId]
         api.fetchContest(contestId).then(contest => {
             this.setState({
-                currentContestId: contest.id,
+                currentContestId: contest._id,
                 contests: {
                     ...this.state.contests,
-                    [contest.id]: contest
+                    [contest._id]: contest
                 }
             });
         });
-
-        this.setState({
-            currentContestId: contestId
-        });
     }
+
     fetchContestList = () => {
         pushState(
             {currentContestId: null},
@@ -65,10 +63,24 @@ class App extends React.Component {
                 "contests": contests
             });
         });
-
-        this.setState({
-            currentContestId: null
+    }
+    fetchNames = (nameIds) => {
+        if(nameIds.length === 0){
+            return;
+        }
+        api.fetchNames(nameIds).then(names => {
+            this.setState({
+                "names" : names
+            });
         });
+    }
+    lookupName = (nameId) => {
+        if(!this.state.names || !this.state.names[nameId]){
+            return {
+                "name": "..."
+            };
+        }
+        return this.state.names[nameId];
     }
     currentContest(){
         return this.state.contests[this.state.currentContestId];
@@ -84,12 +96,14 @@ class App extends React.Component {
         if(this.state.currentContestId){
             return (<Contest 
                 contestListClick={this.fetchContestList}
+                fetchNames={this.fetchNames}
+                lookupName={this.lookupName}
                 {...this.currentContest()}/>);
         }
         else{
             return (<ContestList 
                 onContestClick={this.fetchContest}
-            contests={this.state.contests} />);
+                contests={this.state.contests} />);
         }
         
     }
